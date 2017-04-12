@@ -1,1 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+.navbar-header a,#bs-navbar a{
+color:#ed008c;
+font: italic 500 16px "Times New Roman",Times,serif;
+}
