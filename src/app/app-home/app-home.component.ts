@@ -12,7 +12,8 @@ export class AppHomeComponent implements OnInit {
  }
 
   ngOnInit() {
-        
+
   }
+welcome  = 'Welcome to JFactory';
 
 }

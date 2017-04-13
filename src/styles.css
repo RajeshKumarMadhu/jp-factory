@@ -1,5 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 .navbar-header a,#bs-navbar a{
-color:#ed008c;
+color:#fff;
 font: italic 500 16px "Times New Roman",Times,serif;
+}
+
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background: #000046; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #000046, #1cb5e0); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #000046, #1cb5e0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }

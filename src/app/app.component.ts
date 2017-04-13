@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  appName = 'Jothi PVC Pipes';
-  title = 'Invoicing';
+  appName = '';
+  title = '';
 }

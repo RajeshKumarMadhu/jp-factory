@@ -1,0 +1,13 @@
+.welcome-text {
+  height: 100px;
+  line-height: 20em;
+  white-space: nowrap;
+  font-size: xx-large;
+  color:#fff;
+}
+a span{
+  vertical-align: middle;
+}
+.white, .white a {
+  color: #fff;
+}
