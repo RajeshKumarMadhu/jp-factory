@@ -8,6 +8,7 @@ const appRoutes: Routes = [
   { path: 'app-home', component: AppHomeComponent},
   { path: 'order-summary', component: OrderSummaryComponent},
   { path: 'report-cards', component: ReportCardsComponent},
+  { path: 'item-entry', component: ItemEntryComponent},
   { path: '**', component: PageNotFoundComponent}
 ];
 
@@ -18,6 +19,7 @@ import { AppHomeComponent } from './app-home/app-home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { ReportCardsComponent } from './report-cards/report-cards.component';
+import { ItemEntryComponent } from './item-entry/item-entry.component';
 
 
 
@@ -27,7 +29,8 @@ import { ReportCardsComponent } from './report-cards/report-cards.component';
     AppHomeComponent,
     PageNotFoundComponent,
     OrderSummaryComponent,
-    ReportCardsComponent
+    ReportCardsComponent,
+    ItemEntryComponent
   ],
   imports: [
     BrowserModule,

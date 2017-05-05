@@ -1,0 +1,122 @@
+{
+      "storeId": "101",
+      "storeName": "J Store 1",
+      "street": "street 1",
+      "addrLine1": "Address line 1",
+      "addrLine2": "Address line 2",
+      "city": "Dharmapuri",
+      "district": "Dharmapuri",
+      "pincode": "636702",
+      "contactDetails": {
+        "phoneNumber": [
+          "1234567890",
+          "987654310"
+        ],
+        "email": "xyz@example.com"
+      }
+    }
+    {
+      "storeId": "102",
+      "storeName": "J Store 2",
+      "street": "street 2",
+      "addrLine1": "Address line 1",
+      "addrLine2": "Address line 2",
+      "city": "Salem",
+      "district": "Salem",
+      "pincode": "636702",
+      "contactDetails": {
+        "phoneNumber": [
+          "1234567890",
+          "987654310"
+        ],
+        "email": "xyz@example.com"
+      }
+    }
+    {
+      "storeId": "103",
+      "storeName": "J Store 3",
+      "street": "street1",
+      "addrLine1": "Address line 1",
+      "addrLine2": "Address line 2",
+      "city": "Krishnagiri",
+      "district": "Krishnagiri",
+      "pincode": "636702",
+      "contactDetails": {
+        "phoneNumber": [
+          "1234567890",
+          "987654310"
+        ],
+        "email": "xyz@example.com"
+      }
+    }
+    {
+      "storeId": "104",
+      "storeName": "J Store 4",
+      "street": "street1",
+      "addrLine1": "Address line 1",
+      "addrLine2": "Address line 2",
+      "city": "Krishnagiri",
+      "district": "Krishnagiri",
+      "pincode": "636702",
+      "contactDetails": {
+        "phoneNumber": [
+          "1234567890",
+          "987654310"
+        ],
+        "email": "xyz@example.com"
+      }
+    }
+    {
+      "storeId": "105",
+      "storeName": "J Store 5",
+      "street": "street1",
+      "addrLine1": "Address line 1",
+      "addrLine2": "Address line 2",
+      "city": "Dharmapuri",
+      "district": "Dharmapuri",
+      "pincode": "636702",
+      "contactDetails": {
+        "phoneNumber": [
+          "1234567890",
+          "987654310"
+        ],
+        "email": "xyz@example.com"
+      }
+    }
+    {
+      "storeId": "106",
+      "storeName": "J Store 6",
+      "street": "street1",
+      "addrLine1": "Address line 1",
+      "addrLine2": "Address line 2",
+      "city": "Salem",
+      "district": "Salem",
+      "pincode": "636702",
+      "contactDetails": {
+        "phoneNumber": [
+          "1234567890",
+          "987654310"
+        ],
+        "email": "xyz@example.com"
+      }
+    }
+    {
+      "storeId": "107",
+      "storeName": "J Store 7",
+      "street": "street1",
+      "addrLine1": "Address line 1",
+      "addrLine2": "Address line 2",
+      "city": "Salem",
+      "district": "Salem",
+      "pincode": "636702",
+      "contactDetails": {
+        "phoneNumber": [
+          "1234567890",
+          "987654310"
+        ],
+        "email": "xyz@example.com"
+      }
+    }
+ 
+ 
+ 
