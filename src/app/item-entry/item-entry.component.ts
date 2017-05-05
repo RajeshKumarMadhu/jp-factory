@@ -12,4 +12,8 @@ export class ItemEntryComponent implements OnInit {
   ngOnInit() {
   }
 
+  printDiv() {
+    window.print();
+  }
+
 }
