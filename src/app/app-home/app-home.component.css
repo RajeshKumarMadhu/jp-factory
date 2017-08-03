@@ -3,8 +3,9 @@
   line-height: 20em;
   white-space: nowrap;
   font-size: xx-large;
-  color:#fff;
+  color:#333;
 }
+.welcome-text .black {color:#333}
 a span{
   vertical-align: middle;
 }

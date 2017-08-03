@@ -51,6 +51,7 @@
                                       <td class="text-center"><strong>Item Price</strong></td>
                                       <td class="text-center"><strong>Item Quantity</strong></td>
                                       <td class="text-right"><strong>Total</strong></td>
+                                      <td class="text-right"><strong>Delete</strong></td>
                                   </tr>
                               </thead>
                               <tbody>
@@ -58,45 +59,67 @@
                                       <td><input type="text" class="form-control" placeholder="Item name"></td>
                                       <td class="text-center"><input type="text" class="form-control" placeholder="Price"></td>
                                       <td class="text-center"><input type="text" class="form-control" placeholder="Qty"></td>
-                                      <td class="text-right">{{100}}</td>
+                                      <td class="text-right">{{100.2 | currency:'INR':true}}</td>
+                                      <td class="text-right"><span class="glyphicon glyphicon-trash"></span></td>
                                   </tr>
                                   <tr>
                                       <td><input type="text" class="form-control" placeholder="Item name"></td>
                                       <td class="text-center"><input type="text" class="form-control" placeholder="Price"></td>
                                       <td class="text-center"><input type="text" class="form-control" placeholder="Qty"></td>
-                                      <td class="text-right">$900</td>
+                                      <td class="text-right">{{ 900 | currency:'INR':true}}</td>
+                                      <td class="text-right"><span class="glyphicon glyphicon-trash"></span></td>
                                   </tr>
                                   <tr>
                                       <td><input type="text" class="form-control" placeholder="Item name"></td>
                                       <td class="text-center"><input type="text" class="form-control" placeholder="Price"></td>
                                       <td class="text-center"><input type="text" class="form-control" placeholder="Qty"></td>
-                                      <td class="text-right">$900</td>
+                                      <td class="text-right">{{ 900 | currency:'INR':true}}</td>
+                                      <td class="text-right"><span class="glyphicon glyphicon-trash"></span></td>
                                   </tr>
 
                                   <tr>
                                       <td><input type="text" class="form-control" placeholder="Item name"></td>
                                       <td class="text-center"><input type="text" class="form-control" placeholder="Price"></td>
                                       <td class="text-center"><input type="text" class="form-control" placeholder="Qty"></td>
-                                      <td class="text-right">$900</td>
+                                      <td class="text-right">{{ 900 | currency:'INR':true}}</td>
+                                      <td class="text-right"><span class="glyphicon glyphicon-trash"></span></td>
                                   </tr>
 
                                   <tr>
                                       <td class="highrow"></td>
                                       <td class="highrow"></td>
                                       <td class="highrow text-center"><strong>Subtotal</strong></td>
-                                      <td class="highrow text-right">$958.00</td>
+                                      <td class="highrow text-right">{{ 958 | currency:'INR':true}}</td>
+                                      <td class="highrow"></td>
                                   </tr>
                                   <tr>
                                       <td class="emptyrow"></td>
                                       <td class="emptyrow"></td>
-                                      <td class="emptyrow text-center"><strong>Shipping</strong></td>
-                                      <td class="emptyrow text-right">$20</td>
+                                      <td class="emptyrow text-center"><strong>Discount</strong></td>
+                                      <td class="emptyrow text-right">{{ 20 | currency:'INR':true}}</td>
+
                                   </tr>
+                                  <tr>
+                                      <td class="emptyrow"></td>
+                                      <td class="emptyrow"></td>
+                                      <td class="emptyrow text-center"><strong>CGST<small> 8%</small></strong></td>
+                                      <td class="emptyrow text-right">{{ 20 | currency:'INR':true}}</td>
+
+                                  </tr>
+                                  <tr>
+                                      <td class="emptyrow"></td>
+                                      <td class="emptyrow"></td>
+                                      <td class="emptyrow text-center"><strong>SGST<small> 8%</small></strong></td>
+                                      <td class="emptyrow text-right">{{ 20 | currency:'INR':true}}</td>
+
+                                  </tr>
+
                                   <tr>
                                       <td class="emptyrow"><i class="fa fa-barcode iconbig"></i></td>
                                       <td class="emptyrow"></td>
                                       <td class="emptyrow text-center"><strong>Total</strong></td>
-                                      <td class="emptyrow text-right">$978.00</td>
+                                      <td class="emptyrow text-right">{{ 2958 | currency:'INR':true}}</td>
+
                                   </tr>
                               </tbody>
                           </table>
