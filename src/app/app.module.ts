@@ -11,12 +11,7 @@ import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { ReportCardsComponent } from './report-cards/report-cards.component';
 import { ItemEntryComponent } from './item-entry/item-entry.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 
-import { DashboardModule } from './dashboard/dashboard.module';
-import { SidebarModule } from './sidebar/sidebar.module';
-import { FooterModule } from './shared/footer/footer.module';
-import { NavbarModule} from './shared/navbar/navbar.module';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { StoreMapComponent } from './store-map/store-map.component';
 import { SearchPipe } from './search.pipe';
@@ -43,7 +38,6 @@ const appRoutes: Routes = [
     ReportCardsComponent,
     ItemEntryComponent,
     LandingPageComponent,
-    DashboardComponent,
     UserDetailsComponent,
     StoreMapComponent,
     SearchPipe
@@ -52,10 +46,6 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    DashboardModule,
-    SidebarModule,
-    NavbarModule,
-    FooterModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
