@@ -8,17 +8,17 @@
               <div class="row">
                   <div class="col-xs-12 col-md-3 col-lg-3 pull-left">
                       <div class="panel panel-default height">
-                          <div class="panel-heading">Billing Details</div>
+                          <div class="panel-heading">Invoice Details</div>
                           <div class="panel-body">
-                              <strong>David Peere:</strong><br>
-                              1111 Army Navy Drive<br>
-                              Arlington<br>
-                              VA<br>
-                              <strong>22 203</strong><br>
+                              <strong>Jothi PVC Pipes</strong><br>
+                               Dharmapuri<br>
+                               TIN: 1234567890  <br>
+                               BILL No: 1234<br>
+                              <strong>9003631555</strong><br>
                           </div>
                       </div>
                   </div>
-                  <div class="col-xs-12 col-md-3 col-lg-3">
+                  <div class="col-xs-12 col-md-3 col-lg-3" hidden>
                       <div class="panel panel-default height">
                           <div class="panel-heading">Payment Information</div>
                           <div class="panel-body">
@@ -28,10 +28,13 @@
                           </div>
                       </div>
                   </div>
-                  <div class="col-xs-12 col-md-3 col-lg-3">
-                      <div class="panel panel-default height">
+                  <div class="col-xs-12 col-md-3 col-lg-3" >
+                      <div class="panel panel-default">
                           <div class="panel-heading">Order Preferences</div>
                           <div class="panel-body">
+                              <strong>Payment Mode:</strong> Cash<br>
+                          </div>
+                          <div class="panel-body" hidden>
                               <strong>Gift:</strong> No<br>
                               <strong>Express Delivery:</strong> Yes<br>
                               <strong>Insurance:</strong> No<br>
@@ -40,14 +43,12 @@
                       </div>
                   </div>
                   <div class="col-xs-12 col-md-3 col-lg-3 pull-right">
-                      <div class="panel panel-default height">
+                      <div class="panel panel-default ">
                           <div class="panel-heading">Shipping Address</div>
                           <div class="panel-body">
-                              <strong>David Peere:</strong><br>
-                              1111 Army Navy Drive<br>
-                              Arlington<br>
-                              VA<br>
-                              <strong>22 203</strong><br>
+                              <strong>Store/Customer Name</strong><br>
+                              CustomerAddress<br>
+                              Customer Phone<br>
                           </div>
                       </div>
                   </div>
@@ -67,30 +68,19 @@
                               <thead>
                                   <tr>
                                       <td><strong>Item Name</strong></td>
-                                      <td class="text-center"><strong>Item Price</strong></td>
-                                      <td class="text-center"><strong>Item Quantity</strong></td>
+                                      <td class="text-center"><strong>Item weight</strong></td>
+                                      <td class="text-center"><strong>Item price</strong></td>
                                       <td class="text-right"><strong>Total</strong></td>
                                   </tr>
                               </thead>
                               <tbody>
-                                  <tr>
-                                      <td>Samsung Galaxy S5</td>
-                                      <td class="text-center">{{ 900 | currency:'INR':true}}</td>
-                                      <td class="text-center">1</td>
-                                      <td class="text-right">{{ 900 | currency:'INR':true}}</td>
+                                  <tr *ngFor="let item of orderdata">
+                                      <td>{{item.name}}</td>
+                                      <td class="text-center">{{ item.weight }}</td>
+                                      <td class="text-center">{{ item.price | currency:'INR':true}}</td>
+                                      <td class="text-right">{{ item.itemtotal | currency:'INR':true}}</td>
                                   </tr>
-                                  <tr>
-                                      <td>Samsung Galaxy S5 Extra Battery</td>
-                                      <td class="text-center">{{ 30.00 | currency:'INR':true}}</td>
-                                      <td class="text-center">1</td>
-                                      <td class="text-right">{{ 30.00 | currency:'INR':true}}</td>
-                                  </tr>
-                                  <tr>
-                                      <td>Screen protector</td>
-                                      <td class="text-center">{{ 7 | currency:'INR':true}}</td>
-                                      <td class="text-center">4</td>
-                                      <td class="text-right">{{ 28 | currency:'INR':true}}</td>
-                                  </tr>
+
                               </tbody>
                           </table>
 
@@ -109,31 +99,31 @@
                                       <td class="highrow"></td>
                                       <td class="highrow"></td>
                                       <td class="highrow text-center"><strong>Subtotal</strong></td>
-                                      <td class="highrow text-right">{{ 958.00 | currency:'INR':true}}</td>
+                                      <td class="highrow text-right">{{ totalData.subtotal | currency:'INR':true}}</td>
                                   </tr>
                                   <tr>
                                       <td class="emptyrow"></td>
                                       <td class="emptyrow"></td>
                                       <td class="emptyrow text-center"><strong>Discount</strong></td>
-                                      <td class="emptyrow text-right">{{ 20 | currency:'INR':true}}</td>
+                                      <td class="emptyrow text-right">{{ totalData.discount | currency:'INR':true}}</td>
                                   </tr>
                                   <tr>
                                       <td class="emptyrow"></td>
                                       <td class="emptyrow"></td>
-                                      <td class="emptyrow text-center"><strong>CGST</strong></td>
-                                      <td class="emptyrow text-right">{{ 20 | currency:'INR':true}}</td>
+                                      <td class="emptyrow text-center"><strong>CGST <small> {{taxData.cgstTaxPercentile}}%</small></strong></td>
+                                      <td class="emptyrow text-right">{{ taxData.cgstTaxAmt | currency:'INR':true}}</td>
                                   </tr>
                                   <tr>
                                       <td class="emptyrow"></td>
                                       <td class="emptyrow"></td>
-                                      <td class="emptyrow text-center"><strong>SGST</strong></td>
-                                      <td class="emptyrow text-right">{{ 20 | currency:'INR':true}}</td>
+                                      <td class="emptyrow text-center"><strong>SGST <small> {{taxData.sgstTaxPercentile}}%</small></strong></td>
+                                      <td class="emptyrow text-right">{{ taxData.sgstTaxAmt | currency:'INR':true}}</td>
                                   </tr>
                                   <tr>
-                                      <td class="emptyrow"><i class="fa fa-barcode iconbig"></i></td>
+                                      <td class="emptyrow"></td>
                                       <td class="emptyrow"></td>
                                       <td class="emptyrow text-center"><strong>Total</strong></td>
-                                      <td class="emptyrow text-right">{{ 978.00 | currency:'INR':true}}</td>
+                                      <td class="emptyrow text-right">{{ totalData.total | currency:'INR':true}}</td>
                                   </tr>
                               </tbody>
                           </table>
@@ -148,7 +138,7 @@
       <a class="btn btn-success btn-lg" (click)="printDiv()">
         <span class="glyphicon glyphicon-print"></span> Print
       </a>
-      <a href="#" class="btn btn-success btn-lg">
+      <a href="#" class="btn btn-success btn-lg hidden">
         <span class="glyphicon glyphicon-edit"></span> Edit
       </a>
     </div>
