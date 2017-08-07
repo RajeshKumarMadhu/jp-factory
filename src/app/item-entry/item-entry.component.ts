@@ -19,9 +19,9 @@ export class ItemEntryComponent implements OnInit {
   items =[ {name:'',itemtotal:''} ];
 
   calcTotal(e) {
-    if(e.qty!= undefined && e.price!= undefined){
-      if(e.qty!= '' && e.price != ''){
-        e.itemtotal = e.qty*e.price;
+    if(e.weight!= undefined && e.price!= undefined){
+      if(e.weight!= '' && e.price != ''){
+        e.itemtotal = e.weight*e.price;
         return true;
       }
       else if (isNaN(e) || e === undefined ||  e === ''||  e === null){
@@ -34,10 +34,12 @@ export class ItemEntryComponent implements OnInit {
   subtotal =0;
   cgstTax = 0;
   sgstTax = 0;
-  discount = 0;
-  cgstTaxPercentile = 8;
-  sgstTaxPercentile = 4;
+  discount = 0.0;
+  tax = {cgstTaxPercentile : 8.0,sgstTaxPercentile: 9.0 ,cgstTaxAmt:0.0,sgstTaxAmt:0.0}
+  cgstTaxPercentile = this.tax.cgstTaxPercentile;
+  sgstTaxPercentile = this.tax.sgstTaxPercentile;
   total =0;
+  totalData ={subtotal:0.0,total:0.0,discount:0.0};
   sum(item){
     this.calcTotal(item);
     this.subtotal = 0;
@@ -46,6 +48,10 @@ export class ItemEntryComponent implements OnInit {
       this.cgstTax = (this.subtotal-this.discount)*this.cgstTaxPercentile/100;
       this.sgstTax = (this.subtotal-this.discount)*this.sgstTaxPercentile/100;
       this.total = this.subtotal+this.cgstTax + this.sgstTax;
+      if(this.cgstTax)
+        this.tax.cgstTaxAmt = this.cgstTax;
+      if(this.sgstTax)
+        this.tax.sgstTaxAmt = this.sgstTax;
     }
     //this.calculateGst();
   }
@@ -60,11 +66,31 @@ export class ItemEntryComponent implements OnInit {
   }
   recalculatePrice(item){
     this.subtotal = 0;
-    if(!isNaN(item.itemtotal) && item.itemtotal!= undefined && item.itemtotal!=''){
+    if(item == undefined){
       this.items.forEach(item =>(this.subtotal += parseFloat(item.itemtotal)));
       this.cgstTax = (this.subtotal-this.discount)*this.cgstTaxPercentile/100;
       this.sgstTax = (this.subtotal-this.discount)*this.sgstTaxPercentile/100;
       this.total = this.subtotal+this.cgstTax + this.sgstTax;
     }
+    else if(!isNaN(item.itemtotal) && item.itemtotal!= undefined && item.itemtotal!=''){
+      this.items.forEach(item =>(this.subtotal += parseFloat(item.itemtotal)));
+      this.cgstTax = (this.subtotal-this.discount)*this.cgstTaxPercentile/100;
+      this.sgstTax = (this.subtotal-this.discount)*this.sgstTaxPercentile/100;
+      this.total = this.subtotal+this.cgstTax + this.sgstTax;
+    }
+
+    if(this.cgstTax)
+      this.tax.cgstTaxAmt = this.cgstTax;
+    if(this.sgstTax)
+      this.tax.sgstTaxAmt = this.sgstTax;
+  }
+
+  setDataAndRedirect(){
+      sessionStorage.setItem('orderDetails', JSON.stringify(this.items));
+      sessionStorage.setItem('taxinfo', JSON.stringify(this.tax));
+      this.totalData.total = this.total;
+      this.totalData.subtotal = this.subtotal;
+      this.totalData.discount = this.discount;
+      sessionStorage.setItem('totalData', JSON.stringify(this.totalData));
   }
 }

@@ -47,18 +47,18 @@
                               <thead>
                                   <tr>
                                       <td><strong>Item Name</strong></td>
-                                      <td class="text-center"><strong>Item Price</strong></td>
-                                      <td class="text-center"><strong>Item Quantity</strong></td>
+                                      <td class="text-left"><strong>Item weight</strong></td>
+                                      <td class="text-left"><strong>Item Price</strong></td>
                                       <td class="text-right"><strong>Total</strong></td>
-                                      <td class="text-right"><strong>Delete</strong></td>
+                                      <td class="text-center"><strong>Delete</strong></td>
                                   </tr>
                               </thead>
                               <tbody>
                                   <tr *ngFor="let item of items">
                                       <td><input type="text" class="form-control" placeholder="Item name" [(ngModel)]="item.name"></td>
-                                      <td class="text-center"><input type="text" class="form-control" [(ngModel)]="item.price" (ngModelChange)="sum(item)" placeholder="Price"></td>
-                                      <td class="text-center"><input type="text" class="form-control" [(ngModel)]="item.qty" (ngModelChange)="sum(item)" placeholder="Qty"></td>
-                                      <td class="text-right">{{ calcTotal(item) ? (item.price*item.qty | currency:'INR':true):0.0}}</td>
+                                      <td class="text-center"><input type="text" class="form-control" [(ngModel)]="item.weight" (ngModelChange)="sum(item)"  placeholder="Weight"></td>
+                                      <td class="text-center"><input type="text" class="form-control" [(ngModel)]="item.price" (ngModelChange)="sum(item)" placeholder="Price" (keyup.enter)='addItem()'></td>
+                                      <td class="text-right">{{ calcTotal(item) ? (item.price*item.weight | currency:'INR':true):0.0}}</td>
                                       <td class="text-right"><span class="glyphicon glyphicon-trash" (click)='deleteItem(item)'></span></td>
                                   </tr>
                             <!--  </tbody>
@@ -85,20 +85,20 @@
                                       <td class="emptyrow"></td>
                                       <td class="emptyrow"></td>
                                       <td class="emptyrow text-center"><strong>Discount</strong></td>
-                                      <td class="emptyrow text-right">{{ discount | currency:'INR':true}}</td>
+                                      <td class="emptyrow text-right"><input type='number' class='form-control text-right' [(ngModel)]="discount" (ngModelChange)="recalculatePrice(item)"/></td>
 
                                   </tr>
                                   <tr>
                                       <td class="emptyrow"></td>
                                       <td class="emptyrow"></td>
-                                      <td class="emptyrow text-center"><strong>CGST<small> 8%</small></strong></td>
+                                      <td class="emptyrow text-center"><strong>CGST<small> {{cgstTaxPercentile}}%</small></strong></td>
                                       <td class="emptyrow text-right">{{ cgstTax | currency:'INR':true}}</td>
 
                                   </tr>
                                   <tr>
                                       <td class="emptyrow"></td>
                                       <td class="emptyrow"></td>
-                                      <td class="emptyrow text-center"><strong>SGST<small> 8%</small></strong></td>
+                                      <td class="emptyrow text-center"><strong>SGST<small> {{sgstTaxPercentile}}%</small></strong></td>
                                       <td class="emptyrow text-right">{{ sgstTax | currency:'INR':true}}</td>
 
                                   </tr>
@@ -130,7 +130,7 @@
       <a class="btn btn-success btn-lg" (click)="addItem()">
         <span class="glyphicon glyphicon-plus"></span> Add Item
       </a>
-      <a href='order-summary' class="btn btn-danger btn-lg">
+      <a href='order-summary' (click)="setDataAndRedirect()" class="btn btn-danger btn-lg">
           <span class="glyphicon glyphicon-edit"></span> Next
       </a>
     </div>
