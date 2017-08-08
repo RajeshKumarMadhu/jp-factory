@@ -1,7 +1,69 @@
 <div class='welcome-text'>
 <p class="text-center">{{welcome}}
-  <a href="/landing-page">
-    <span class="glyphicon glyphicon-menu-right black"></span>
-  </a>
+
 </p>
+</div>
+
+<div class="main-content">
+<div class="container-fluid">
+    <div class="row  row-centered">
+        <div class="col-md-4 col-centered">
+            <div class="card">
+                <div class="card-header" data-background-color="green">
+                    <h4 class="title">Enter credentials to Login</h4>
+                </div>
+                <div class="card-content row-centere">
+                    <form>
+                        <div class="row row-centered">
+                            <div class="col-md-8 col-centered">
+                                <div class="form-group form-black label-floating is-empty">
+                                    <label class="control-label">Username</label>
+                                    <input type="text" class="form-control" name='username' [(ngModel)]="username">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class='row row-centered'>
+                          <div class="col-md-8 col-centered">
+                              <div class="form-group form-black label-floating is-empty">
+                                  <label class="control-label">Password</label>
+                                  <input type="password" class="form-control" name='password'  [(ngModel)]="password">
+                              </div>
+                          </div>
+                        </div>
+                        <div class='row row-centered'>
+                          <div class="col-md-8 col-centered">
+                            <!--  <button type="submit" class="btn btn-success btn-lg">Login</button> -->
+                            <p class="text-center" (click) ='validateAndLogin()'>{{login}}
+                              <a >
+                                <span class="glyphicon glyphicon-menu-right black"></span>
+                              </a>
+                            </p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+      <!--  <div class="col-md-4">
+            <div class="card card-profile">
+                <div class="card-avatar">
+                    <a href="#pablo">
+                        <img class="img" src="../assets/img/faces/marc.jpg" />
+                    </a>
+                </div>
+
+                <div class="content">
+                    <h6 class="category text-gray">CEO / Co-Founder</h6>
+                    <h4 class="card-title">Alec Thompson</h4>
+                    <p class="card-content">
+                        Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                    </p>
+                    <a href="#pablo" class="btn btn-danger btn-round">Follow</a>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>
 </div>

@@ -1,6 +1,6 @@
 .welcome-text {
   height: 100px;
-  line-height: 20em;
+  line-height: 3em;
   white-space: nowrap;
   font-size: xx-large;
   color:#333;
@@ -11,6 +11,19 @@ a span{
 }
 .white, .white a {
   color: #fff;
+}
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
