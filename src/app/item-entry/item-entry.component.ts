@@ -35,7 +35,7 @@ export class ItemEntryComponent implements OnInit {
   cgstTax = 0;
   sgstTax = 0;
   discount = 0.0;
-  tax = {cgstTaxPercentile : 8.0,sgstTaxPercentile: 9.0 ,cgstTaxAmt:0.0,sgstTaxAmt:0.0}
+  tax = {cgstTaxPercentile : 9.0,sgstTaxPercentile: 9.0 ,cgstTaxAmt:0.0,sgstTaxAmt:0.0}
   cgstTaxPercentile = this.tax.cgstTaxPercentile;
   sgstTaxPercentile = this.tax.sgstTaxPercentile;
   total =0;
@@ -66,7 +66,7 @@ export class ItemEntryComponent implements OnInit {
   }
   recalculatePrice(item){
     this.subtotal = 0;
-    if(item == undefined){
+    if(item == 'undefined'){
       this.items.forEach(item =>(this.subtotal += parseFloat(item.itemtotal)));
       this.cgstTax = (this.subtotal-this.discount)*this.cgstTaxPercentile/100;
       this.sgstTax = (this.subtotal-this.discount)*this.sgstTaxPercentile/100;
