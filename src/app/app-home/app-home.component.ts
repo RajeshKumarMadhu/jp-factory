@@ -7,10 +7,10 @@ import { RouterModule, Routes, Router } from '@angular/router';
   styleUrls: ['./app-home.component.css']
 })
 export class AppHomeComponent implements OnInit {
- private login: String;
- private welcome: String;
- private username: String;
- private password: String;
+ public login: String;
+ public welcome: String;
+ public username: String;
+ public password: String;
 
   private redirectUrl : String;
 
