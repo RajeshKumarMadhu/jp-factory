@@ -15,18 +15,19 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { StoreMapComponent } from './store-map/store-map.component';
 import { SearchPipe } from './search.pipe';
+import { AppGaurdGuard } from './app-gaurd.guard';
 //import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 const appRoutes: Routes = [
-  {path: '', component: AppHomeComponent},
+  {path: '', component: AppHomeComponent },
   { path: 'app-home', component: AppHomeComponent},
-  { path: 'landing-page', component: LandingPageComponent},
-  { path: 'user-details', component: UserDetailsComponent},
-  { path: 'order-summary', component: OrderSummaryComponent},
-  { path: 'report-cards', component: ReportCardsComponent},
-  { path: 'item-entry', component: ItemEntryComponent},
-  { path: 'store-map', component: StoreMapComponent},
-  { path: '**', component: PageNotFoundComponent}
+  { path: 'landing-page', component: LandingPageComponent, canActivate: [AppGaurdGuard]},
+  { path: 'user-details', component: UserDetailsComponent, canActivate: [AppGaurdGuard]},
+  { path: 'order-summary', component: OrderSummaryComponent, canActivate: [AppGaurdGuard]},
+  { path: 'report-cards', component: ReportCardsComponent, canActivate: [AppGaurdGuard]},
+  { path: 'item-entry', component: ItemEntryComponent, canActivate: [AppGaurdGuard]},
+  { path: 'store-map', component: StoreMapComponent, canActivate: [AppGaurdGuard]},
+  { path: '**', component: PageNotFoundComponent, canActivate: [AppGaurdGuard]}
 ];
 
 @NgModule({
@@ -48,7 +49,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [AppGaurdGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -15,6 +15,7 @@ export class AppHomeComponent implements OnInit {
   private redirectUrl : String;
 
   constructor(public router: Router) {
+    sessionStorage.setItem('token','false');
     this.redirectUrl = 'landing-page'
  }
 
@@ -27,6 +28,7 @@ export class AppHomeComponent implements OnInit {
           if(this.password!=undefined && this.password!=''){
                 console.log('Try login service');
                 if(this.username == 'root' && this.password =='madhu'){
+                    sessionStorage.setItem('token','true');
                     this.router.navigate([this.redirectUrl], { });
 
                 }
